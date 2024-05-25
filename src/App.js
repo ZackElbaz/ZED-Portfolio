@@ -310,3 +310,4 @@ export default App;
 /// git add .
 /// git commit -m "Deployed Website"
 /// git push
+/// npm run deploy
