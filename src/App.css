@@ -106,3 +106,27 @@
 .icon:hover {
   filter: invert(0.6); /* Optional: slightly different color on hover */
 }
+
+
+
+
+.icon-container:hover .icon {
+  transform: scale(1); /* Shrink the icon on hover */
+}
+
+.icon-container {
+  position: relative; /* Ensure relative positioning for absolute children */
+}
+
+.text {
+  display: none; /* Initially hide the text */
+  color: #ff7300; /* Set text color to orange */
+  position: absolute; /* Position the text absolutely */
+  bottom: -20px; /* Adjust the distance from the icon */
+  left: 50%; /* Center the text horizontally */
+  transform: translateX(-50%); /* Center the text horizontally */
+}
+
+.icon-container:hover .text {
+  display: block; /* Show the text on hover */
+}

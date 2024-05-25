@@ -7,7 +7,7 @@
   --search-bar-left-padding: calc(var(--search-bar-radius)/2);
   --font-scale-factor: 0.8;
   --search-bar-font-size: calc(var(--search-bar-height) * var(--font-scale-factor));
-  --arrow-box-height: calc(var(--search-bar-height) + 2 * var(--search-bar-padding) + 2 * var(--search-bar-border));
+  --arrow-box-height: calc(var(--search-bar-height) + 2 * var(--search-bar-padding) +  var(--search-bar-border));
   --arrow-box-radius: calc(var(--arrow-box-height)/2);
   --dropdown-border: var(--search-bar-border);
   --dropdown-width: calc(var(--search-bar-width) + 2 * var(--search-bar-padding) + 2 * var(--search-bar-border) + var(--arrow-box-height) + var(--search-bar-left-padding) - 2 * var(--dropdown-border));
@@ -65,12 +65,15 @@
   cursor: pointer;
   border-left: none;
   border-radius: 0 var(--arrow-box-radius) var(--arrow-box-radius) 0;
-  background-image: url('../public/Dropdown_List_Placeholder.png'); 
+  background-image: url('../public/DropdownArrowSVG.svg'); 
   background-size: cover;
   background-repeat: no-repeat;
-  margin-left: 0px;
+  margin-left: calc(- var(--search-bar-border));
   position: relative;
   z-index: 2;
+  /* Add border properties */
+  border: var(--search-bar-border) solid #ff7300; /* Border properties */
+  box-sizing: border-box; /* Ensure border size doesn't affect dimensions */
 }
 
 .dropdown-list {

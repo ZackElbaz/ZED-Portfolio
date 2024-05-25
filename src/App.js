@@ -179,7 +179,7 @@ function App() {
   // const [contactMeHeightPercent, setContactMeHeightPercent] = useState(20);
   const [bottomSectionHeightPercent, setBottomSectionHeightPercent] = useState(15);
   const [contactMeRowHeightPercent, setContactMeRowHeightPercent] = useState(30);
-
+  
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
@@ -235,7 +235,12 @@ function App() {
       <div className="content">
         <div className="top" style={{ height: `${topHeight}px`, width: `${windowSize.width}px`, margin: `${bufferHeight}px auto 0 auto`, position: 'relative' }}>
           <div className="left-quarter" style={{ height: '100%', width: `${leftWidthPercent}%`, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            <img src="/Logo.jpg" alt="Logo" className="logo" style={{ height: '100%', maxWidth: '100%', objectFit: 'contain' }} />
+          <img
+            src={`${process.env.PUBLIC_URL}/LogoSVG.svg`}
+            alt="Logo"
+            className="logo"
+            style={{ height: '100%', maxWidth: '100%', objectFit: 'contain' }}
+          />
           </div>
           <div className="middle-half" style={{ height: `${topHeight}px`, width: `${middleWidthPercent}%`, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
             <div className="dropdown-widget-container" style={{ width: `${middleWidthPercent}%` }}>
@@ -258,25 +263,37 @@ function App() {
               Contact Me:
             </div>
             <div className="link-container" style={{ display: 'flex', gap: `${linkSpacing}px`, fontSize: `${linkFontSize}px`, textAlign: 'center' }}>
-              <div>
-                <a href="https://www.linkedin.com/in/zack-el-baz" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/LinkedinSVG.svg`} alt="LinkedIn" className="icon" />
-                </a>
+              <div className="icon-container">
+                <div>
+                  <a href="https://www.linkedin.com/in/zack-el-baz" target="_blank" rel="noopener noreferrer">
+                    <img src={`${process.env.PUBLIC_URL}/LinkedinSVG.svg`} alt="LinkedIn" className="icon" />
+                  </a>
+                </div>
+                <div className="text">LinkedIn</div>
               </div>
-              <div>
+              <div className="icon-container">
+                <div>
                 <a href="mailto:zackelbaz@gmail.com" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/EmailSVG.svg`} alt="Email" className="icon" />
-                </a>
+                <img src={`${process.env.PUBLIC_URL}/EmailSVG.svg`} alt="Email" className="icon" />
+                  </a>
+                </div>
+                <div className="text">Email</div>
               </div>
-              <div>
+              <div className="icon-container">
+                <div>
                 <a href="https://www.google.com/maps?q=Bristol,%20UK" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/LocationSVG.svg`} alt="Location" className="icon" />
-                </a>
+                <img src={`${process.env.PUBLIC_URL}/LocationSVG.svg`} alt="Location" className="icon" />
+                  </a>
+                </div>
+                <div className="text">Location</div>
               </div>
-              <div>
-                <a href="https://www.google.com/maps?q=Bristol,%20UK" target="_blank" rel="noopener noreferrer">
-                  <img src={`${process.env.PUBLIC_URL}/PDFSVG.svg`} alt="CV" className="icon" />
-                </a>
+              <div className="icon-container">
+                <div>
+                  <a href={`${process.env.PUBLIC_URL}/Zack El-baz CV 2024.pdf`} download="Zack_El-baz_CV_2024.pdf">
+                    <img src={`${process.env.PUBLIC_URL}/PDFSVG.svg`} alt="CV" className="icon" />
+                  </a>
+                </div>
+                <div className="text">CV</div>
               </div>
             </div>
           </div>
@@ -289,3 +306,7 @@ function App() {
 export default App;
 
 
+/// Deployment
+/// git add .
+/// git commit -m "Deployed Website"
+/// git push
